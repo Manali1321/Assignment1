@@ -18,16 +18,24 @@ app.set('view engine', 'pug');
 // define public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// //convert form data to JSON for easier use
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+//convert form data to JSON for easier use
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // page routes
-app.get('/', (request, response) => {
+app.get('/', async (request, response) => {
     // response.status(200).send('test page');
-    response.render('index', { title: 'Home' });
+    const links = await getLinks();
+    response.render('index', { title: 'Our Services', menu: links });
 });
-
+app.get("/login", async (request, response) => {
+    const links = await getLinks();
+    response.render("index", { title: "Log in", menu: links });
+});
+app.get("/pricing", async (request, response) => {
+    const links = await getLinks();
+    response.render("index", { title: "Pricing", menu: links });
+});
 // set up server listening
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
@@ -42,8 +50,9 @@ async function connection() {
 }
 
 // function to select all documents from menuLinks
-// async function getLinks() {
-//     db = await connection();
-//     var results = db.collection('card').find({});
-//     res
-// }
+async function getLinks() {
+    db = await connection();
+    var results = db.collection('card').find({});
+    var result = await results.toArray(); //convert to an array
+    return result;
+}
