@@ -1,0 +1,24 @@
+block variables
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title #{title} | Mehdi Art House
+        block scripts
+            link(rel='stylesheet', type='text/css', href='/style.css')
+    body
+        header#header
+            .header-content
+                h2#site-name Mehdi Art House
+            .nav
+                ul
+                    li
+                        a(href='/') Our Services
+                    li
+                        a(href='/pricing') Pricing
+                    li
+                        a(href='/login') Log in
+        main#main
+            block main-content
+        footer#footer
+            p &copy; Copyright Mehdi Art House by ManaliPatel, 2023.
