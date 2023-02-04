@@ -6,19 +6,20 @@ html
         title #{title} | Mehdi Art House
         block scripts
             link(rel='stylesheet', type='text/css', href='/style.css')
+            link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
     body
-        header#header
-            .header-content
-                h2#site-name Mehdi Art House
-            .nav
-                ul
-                    li
-                        a(href='/') Our Services
-                    li
-                        a(href='/pricing') Pricing
-                    li
-                        a(href='/login') Log in
-        main#main
+        header.navbar
+            h2.navbar-brand Mehdi Art House
+            //- button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                //- span.navbar-toggle-icon
+            ul.nav
+                li.nav-item
+                    a(href='/').nav-link #{title}
+                li.nav-item
+                    a(href='/pricing').nav-link #{title}
+                li.nav-item
+                    a(href='/login').nav-link #{title}
+        main
             block main-content
         footer#footer
             p &copy; Copyright Mehdi Art House by ManaliPatel, 2023.

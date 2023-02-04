@@ -25,16 +25,15 @@ app.use(express.json());
 // page routes
 app.get('/', async (request, response) => {
     // response.status(200).send('test page');
-    const links = await getLinks();
-    response.render('index', { title: 'Our Services', menu: links });
+    const datas = await getData();
+    console.log(datas);
+    response.render('index', { title: 'Our Services', content: datas });
 });
 app.get("/login", async (request, response) => {
-    const links = await getLinks();
-    response.render("index", { title: "Log in", menu: links });
+    response.render("login", { title: "Log in" });
 });
 app.get("/pricing", async (request, response) => {
-    const links = await getLinks();
-    response.render("index", { title: "Pricing", menu: links });
+    response.render("pricing", { title: "Pricing" });
 });
 // set up server listening
 app.listen(port, () => {
@@ -45,14 +44,16 @@ app.listen(port, () => {
 // function to connect to DB and return the 'show' database
 async function connection() {
     await client.connect();
-    db = client.db('show');
+    var db = client.db('Mehdi_art');
     return db;
 }
 
 // function to select all documents from menuLinks
-async function getLinks() {
-    db = await connection();
-    var results = db.collection('card').find({});
-    var result = await results.toArray(); //convert to an array
-    return result;
+async function getData() {
+    var db = await connection();
+    var collection = db.collection('seller_data')
+    var results = await collection.find({}).toArray();
+    // var result = await results.toArray(); //convert to an array
+    return results;
+
 }

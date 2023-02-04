@@ -1,4 +1,13 @@
 extends layout 
 
 block main-content
-    h1.page-title hi
+    .d-flex.h-100.w-100.align-items-center
+        .container
+            .row
+                .col-md-4.text-center
+                    p#website-detail Welcome to Mehdi Art House, the premier platform for talented artists to showcase their work. Discover a diverse collection of stunning art pieces and connect with the artists directly. Whether you're a collector or just appreciate the beauty of art, find your next masterpiece here.
+                .col-md-6
+                    img.rounded-circle(src='/round.jpeg', alt='Art Image', height='300', width='100%')
+                        //- https://www.pinterest.ca/pin/650277633714490750/
+    .card 
+        #{content[0].mywork}
