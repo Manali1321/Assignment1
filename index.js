@@ -30,10 +30,10 @@ app.get('/', async (request, response) => {
     response.render('index', { title: 'Our Services', content: datas });
 });
 app.get("/login", async (request, response) => {
-    response.render("login", { title: "Log in" });
+    response.render("login", { title: 'Log in' });
 });
 app.get("/pricing", async (request, response) => {
-    response.render("pricing", { title: "Pricing" });
+    response.render("pricing", { title: 'Pricing' });
 });
 // set up server listening
 app.listen(port, () => {

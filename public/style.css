@@ -1,3 +1,14 @@
-/* #website-detail{
-
-} */
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding:0;
+}
+.card img{
+    height: 100px;
+    width:80px;
+    margin: 10px;
+}
+.card{
+    width: 200px;
+    height: 500px;
+}
