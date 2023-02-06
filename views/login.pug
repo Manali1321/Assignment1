@@ -3,10 +3,24 @@ extends layout
 
 block main-content 
     p Do you want convert you hobby into business?
-    p Sign up here!!
-    //- form(action="/post")
-    //-     label(for='fname') First name:
-    //-     input#fname(type='text' name='fname' value='John')
-    //-     label(for='lname') Last name:
-    //-     input#lname(type='text' name='lname' value='Doe')
-    //-     input(type='submit' value='Submit')
+    p To add you post fill this form!!!
+    form(action="/post")
+        label(for='fname') Full Name:
+        input(type='text' name='fname' placeholder='John Doe')
+        label(for='desc') Description:
+        textarea(name="message" rows="10" cols="30") Hey!!!I am specialist in arabic mehdi
+        <p>Are you eligible to work in canada?</p>
+        input(type="radio" id="workAssurance" name="workAssurance")
+        label(for="workAssurance") Yes
+        input(type="radio" id="workAssurance" name="workAssurance")
+        label(for="workAssurance") No
+        label(for='price') Price:
+        input(type='text' name='price' placeholder='10$ for one hand')
+        label(for='offer') Offer:
+        input(type='text' name='offer' placeholder='If you want to add any offer')
+        label(for='youwork') Image path:
+        input(type='text' name='youwork' placeholder="img src='/round.jpeg' and add image into public folder")
+        label(for='location') Where you want to work:
+        input(type='text' name='location' placeholder="Etobicoke (around 15km i can travel)")
+        
+        input(type='submit' value='Submit')

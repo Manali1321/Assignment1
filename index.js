@@ -27,13 +27,13 @@ app.get('/', async (request, response) => {
     // response.status(200).send('test page');
     const datas = await getData();
     console.log(datas);
-    response.render('index', { title: 'Our Services', content: datas });
+    response.render('index', { content: datas });
 });
 app.get("/login", async (request, response) => {
-    response.render("login", { title: 'Log in' });
+    response.render("login");
 });
 app.get("/pricing", async (request, response) => {
-    response.render("pricing", { title: 'Pricing' });
+    response.render("pricing");
 });
 // set up server listening
 app.listen(port, () => {
