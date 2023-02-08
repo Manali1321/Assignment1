@@ -4,7 +4,7 @@ const path = require('path');
 const { MongoClient, ObjectId } = require("mongodb");
 
 //Mongo config stuff
-const dbUrl = "mongodb://127.0.0.1:27017";
+const dbUrl = "mongodb+srv://Manali1321:Arman1321@cluster0.mlyhn4b.mongodb.net/Mehdi_art?retryWrites=true&w=majority";
 const client = new MongoClient(dbUrl);
 
 // set up express app and port number
