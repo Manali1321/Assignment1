@@ -2,7 +2,7 @@ extends layout
 
 
 block main-content
-    .container
+    .container.container-login
         h2 Do you want convert you hobby into business?
         p Add You Post By Filling This Form!!!
         form(method="post", action="/login/submit")
@@ -11,7 +11,7 @@ block main-content
                 input(type='text' name='name' placeholder='John Doe')
             .form-group
                 label(for='description') Description:
-                textarea(name="description" rows="10" cols="50") Hey!!!I am specialist in arabic mehdi
+                textarea(name="description" rows="10" cols="50" placeholder="Hey!!!I am specialist in arabic mehdi")
             .form-group
                 p Are you eligible to work in canada? 
                 .form-check
@@ -31,4 +31,4 @@ block main-content
             .form-group
                 label(for='location') Where you want to work:
                 input(type='text' name='location' placeholder="Etobicoke (around 15km i can travel)")
-            button.btn.btn-primary(type='submit') submit
+            button.btn.btn-success(type='submit') submit

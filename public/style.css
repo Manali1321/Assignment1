@@ -1,119 +1,138 @@
-*{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding:0;
-    color: rgb(25, 37, 1);
-    background-color: #aeb8ac;
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(25, 37, 1);
+  background-color: #aeb8ac;
 }
 
-.nav-link{
-    font-weight: 500;
-    font-size: 20px;
-    color: rgb(25, 37, 1);
+.nav-link {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(25, 37, 1);
 }
-a:hover{
-    font-weight: 600;
-    color: #2b4f1a;
+a:hover {
+  font-weight: 600;
+  color: #2b4f1a;
 }
-header{
-    border-bottom: #2b4f1a solid 3px;
-    box-shadow: 0px 5px 40px 0px #DAA520;
-    padding:5px
+header {
+  border-bottom: #2b4f1a solid 3px;
+  box-shadow: 0px 5px 40px 0px #daa520;
+  padding: 5px;
 }
-main .container{
-    padding: 50px 35px;
+main .container-home {
+  padding: 50px 35px;
 }
-.container p{
-font-weight:500;
-font-size: 18px;
-word-spacing: 5px;
-letter-spacing:2px ;
+.container-home p {
+  font-weight: 500;
+  font-size: 18px;
+  word-spacing: 5px;
+  letter-spacing: 2px;
 }
-.container img{
-    width: 100%;
-    box-shadow: 0px 1px 40px -10px #2b4f1a;
+.container-home img {
+  width: 100%;
+  box-shadow: 0px 1px 40px -10px #2b4f1a;
 }
-.container h2{
-    color: #2b4f1a;
+.container-home h2 {
+  color: #2b4f1a;
 }
-.card{
-    width: 250px;
-    height: 500px;
-    box-shadow: 0px 1px 40px -10px #2b4f1a;
-    /* border: 1px solid black!important; */
-    background-color: #aeb8ac!important;
-    margin:20px 50px;
-    border-radius: 10px;
+.card {
+  width: 250px;
+  height: 500px;
+  box-shadow: 0px 1px 40px -10px #2b4f1a;
+  background-color: #aeb8ac !important;
+  margin: 20px 50px;
+  border-radius: 10px;
 }
-.card-info{
-    padding: 15px;
-    font-weight: 500;
-    font-size: 16px;
+.card-info {
+  padding: 15px;
+  font-weight: 500;
+  font-size: 16px;
 }
-.card img{
-    height: 250px;
-    width:100%;
+.card img {
+  height: 250px;
+  width: 100%;
 }
-.card-container{
-    padding: 25px 50px;
-    margin-bottom:100px;
+.card-container {
+  padding: 35px 50px;
 }
-.form-group label{
-    font-weight: 500;
-    font-size: 20px;
-    display: block;
+.container-login {
+  padding: 80px 0;
 }
-.form-group input, textarea{
-    border: 3px solid #2b4f1a;
-    width: 80%;
+.form-group label,
+.form-group p {
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 8px !important;
 }
-.form-group input:focus, textarea:focus{
-    background-color: #c6dda7;
-    font-weight: 500;
+
+.form-group input,
+.form-group textarea {
+  box-shadow: 0px 1px 20px -10px #2b4f1a;
+  width: 80%;
+  border: rgb(109, 107, 107) 1px solid;
+}
+.form-check {
+  padding-left: 25px;
+  width: 30%;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  background-color: #8f9d7c;
+  font-weight: 500;
 }
 /* not working */
-/* .form-group input:nth-child(2){
-    border: none;
-    width: 40%;
+/* .form-group input:nth-child(2) {
+  border: none;
+  width: 40%;
 } */
-form{
-    border: 2px solid black;
-    padding: 5%;
+form {
+  box-shadow: 0px 1px 40px -10px #2b4f1a;
+  padding: 5%;
 }
-.price-content{
-    padding:30px
+input::placeholder,
+textarea::placeholder {
+  font-size: 14px;
+  padding: 0 10px;
+  color: #2b4f1a;
+}
+form button {
+  background-color: #2b4f1a !important;
+  color: #aeb8ac !important;
+}
+.price-content {
+  padding: 30px;
 }
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding-top: 1rem;
-    border-top: #2b4f1a solid 3px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: #2b4f1a solid 3px;
 }
-@media screen and (max-width:1200px){
-    .container h2{
-        font-size: 26px;
-    }
-    .container p{
-        font-weight:500;
-        font-size: 18px;
-        word-spacing: 3px;
-    } 
+@media screen and (max-width: 1200px) {
+  .container-home h2 {
+    font-size: 26px;
+  }
+  .container-home p {
+    font-weight: 500;
+    font-size: 18px;
+    word-spacing: 3px;
+  }
 }
-@media screen and (max-width:992px){
-    .container h2{
-        font-size: 20px;
-    }
-    .container p{
-        font-weight:500;
-        font-size: 16px;
-        word-spacing: 3px;
-        letter-spacing:0 ;
-        } 
+@media screen and (max-width: 992px) {
+  .container-home h2 {
+    font-size: 20px;
+  }
+  .container-home p {
+    font-weight: 500;
+    font-size: 16px;
+    word-spacing: 3px;
+    letter-spacing: 0;
+  }
 }
-@media screen and (max-width:992px){
-
-
+@media screen and (max-width: 770px) {
 }
