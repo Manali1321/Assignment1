@@ -24,15 +24,16 @@ app.use(express.json());
 
 // page routes
 app.get("/", async (request, response) => {
-    const datas = await getData();
+    const datas = await homeData();
     response.render('index', { content: datas });
 });
 app.get("/login", async (request, response) => {
     const datas = await getData();
     response.render("login", { content: datas });
 });
-app.get("/pricing", async (request, response) => {
-    response.render("pricing");
+app.get("/gallery", async (request, response) => {
+    const datas = await getData();
+    response.render("gallery", { content: datas });
 });
 // Form processing path
 app.post("/login/submit", async (request, response) => {
@@ -46,7 +47,7 @@ app.post("/login/submit", async (request, response) => {
         location: request.body.location
     };
     await addData(newdata);
-    response.redirect('/login');
+    response.redirect('/gallery');
 });
 
 // set up server listening
@@ -63,16 +64,21 @@ async function connection() {
 }
 
 // function to select all documents from menuLinks
+async function homeData() {
+    var db = await connection();
+    var collection = db.collection('seller_data')
+    var results = await collection.find({}).limit(4).toArray();
+    return results;
+}
 async function getData() {
     var db = await connection();
     var collection = db.collection('seller_data')
     var results = await collection.find({}).toArray();
-    // var result = await results.toArray(); //convert to an array
     return results;
 }
 async function addData(newdata) {
     var db = await connection();
-    // var collection = ;
-    await db.collection("seller_data").insertOne(newdata);
+    var collection = db.collection("seller_data");
+    var result = await collection.insertOne(newdata);
     console.log('link added');
 }

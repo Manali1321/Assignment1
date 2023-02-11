@@ -1,40 +1,67 @@
-* {
+/* Layout */
+*,
+body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  color: rgb(25, 37, 1);
+  color: #1e3812;
   background-color: #aeb8ac;
 }
-
 .nav-link {
   font-weight: 500;
   font-size: 20px;
-  color: rgb(25, 37, 1);
+  color: #1e3812;
 }
 a:hover {
-  font-weight: 600;
+  font-weight: 700;
   color: #2b4f1a;
 }
 header {
   border-bottom: #2b4f1a solid 3px;
   box-shadow: 0px 5px 40px 0px #daa520;
-  padding: 5px;
 }
-main .container-home {
+h1 {
+  margin-bottom: 0 !important;
+  color: #1e3812 !important;
+  padding: 0 35px;
+  font-weight: 700;
+  font-size: 32px !important;
+}
+header button {
+  margin-right: 20px;
+}
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border-top: #2b4f1a solid 3px;
+  padding: 7px;
+  font-weight: 600;
+}
+footer p {
+  margin: 0 !important;
+}
+/* Home Page */
+.homepage-intro {
   padding: 50px 35px;
 }
-.container-home p {
+.homepage-intro p {
   font-weight: 500;
   font-size: 18px;
   word-spacing: 5px;
   letter-spacing: 2px;
 }
-.container-home img {
+.homepage-intro img {
   width: 100%;
   box-shadow: 0px 1px 40px -10px #2b4f1a;
 }
-.container-home h2 {
-  color: #2b4f1a;
+h3,
+#gallery-container h2 {
+  padding: 15px 35px;
+  font-weight: 600;
 }
 .card {
   width: 250px;
@@ -42,7 +69,6 @@ main .container-home {
   box-shadow: 0px 1px 40px -10px #2b4f1a;
   background-color: #aeb8ac !important;
   margin: 20px 50px;
-  border-radius: 10px;
 }
 .card-info {
   padding: 15px;
@@ -54,39 +80,68 @@ main .container-home {
   width: 100%;
 }
 .card-container {
-  padding: 35px 50px;
+  padding: 25px;
 }
+/* Gallery */
+#gallery-container {
+  padding: 25px;
+}
+#gallery-container h2 {
+  text-align: center;
+}
+.card-block {
+  width: 60%;
+  height: 280px;
+  box-shadow: 0px 1px 40px -10px #2b4f1a;
+  margin: 25px auto;
+  justify-content: space-between;
+}
+.card-block img {
+  width: 35%;
+  height: 100%;
+}
+.card-block button {
+  background-color: #2b4f1a;
+  color: #aeb8ac;
+  font-weight: 600;
+  padding: 5px;
+  margin-right: 5px;
+}
+.align {
+  width: 60%;
+}
+/* Login */
 .container-login {
-  padding: 80px 0;
+  padding: 50px 0;
+}
+.container-login h2,
+.container-login > p {
+  padding: 10px 0;
 }
 .form-group label,
 .form-group p {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
   margin-bottom: 8px !important;
+  color: #2b4f1a;
+  font-weight: 700;
 }
-
 .form-group input,
 .form-group textarea {
   box-shadow: 0px 1px 20px -10px #2b4f1a;
   width: 80%;
-  border: rgb(109, 107, 107) 1px solid;
+  border: rgb(109, 107, 107) 1px solid !important;
 }
 .form-check {
   padding-left: 25px;
-  width: 30%;
+  width: 20%;
 }
 .form-group input:focus,
 .form-group textarea:focus {
   background-color: #8f9d7c;
-  font-weight: 500;
+  font-weight: 600;
 }
-/* not working */
-/* .form-group input:nth-child(2) {
-  border: none;
-  width: 40%;
-} */
 form {
   box-shadow: 0px 1px 40px -10px #2b4f1a;
   padding: 5%;
@@ -101,38 +156,61 @@ form button {
   background-color: #2b4f1a !important;
   color: #aeb8ac !important;
 }
-.price-content {
-  padding: 30px;
-}
-footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding-top: 1rem;
-  border-top: #2b4f1a solid 3px;
-}
+/* media query */
 @media screen and (max-width: 1200px) {
-  .container-home h2 {
+  .homepage-intro h2 {
     font-size: 26px;
   }
-  .container-home p {
+  .homepage-intro p {
     font-weight: 500;
     font-size: 18px;
     word-spacing: 3px;
   }
 }
 @media screen and (max-width: 992px) {
-  .container-home h2 {
+  h1 {
+    font-size: 30px !important;
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+  .homepage-intro h2 {
     font-size: 20px;
   }
-  .container-home p {
-    font-weight: 500;
+  .homepage-intro p {
     font-size: 16px;
-    word-spacing: 3px;
+    word-spacing: 2px;
     letter-spacing: 0;
   }
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 500px) {
+  .homepage-intro {
+    display: block;
+  }
+  .homepage-intro p,
+  .homepage-intro h2,
+  .homepage-intro img {
+    width: 200%;
+  }
+  .homepage-intro img {
+    margin-top: 20px;
+  }
+  .card {
+    justify-content: space-around;
+  }
+  .card-block {
+    flex-direction: column !important;
+    width: 60%;
+    height: 500px;
+    justify-content: space-between;
+    margin: 25px auto;
+  }
+  .card-block img {
+    width: 100%;
+    height: 40%;
+  }
+  .align {
+    width: 100%;
+    height: 60%;
+  }
 }

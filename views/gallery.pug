@@ -1,5 +1,17 @@
 extends layout
 
 block main-content
-    .price-content
-        h2 Pricing
+    #gallery-container
+        h2 Welcome To Our Gallery
+        .container-gallery
+        each card in content
+            .card-block.d-flex.flex-row
+                #{card.mywork}
+                .card-info.align
+                    p Name: #{card.name}
+                    p Description: #{card.description}
+                    p Price: #{card.price}
+                    p Offer: #{card.offer}
+                    p Location: #{card.location}
+                    button Call
+                    button Message

@@ -2,26 +2,33 @@ block variables
 doctype html
 html
     head
-        meta(charset='utf-8')
+        meta(charset="utf-8")
         title Mehdi Art House
         block scripts
-            link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
-            link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap')
-            link(rel='stylesheet', href='style.css', type='text/css')
+            link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous")
+            link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap")
+            link(rel="stylesheet", href="style.css", type="text/css")
     body
-        header.navbar
-            h1 Mehdi Art House
-            //- button.navbar-toggler(type='button', data-toggle='collapse',data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-                //- span.navbar-toggle-icon
-            ul.nav
-                li.nav-item
-                    a(href='/').nav-link Our work
-                li.nav-item
-                    a(href='/gallery').nav-link Gallery
-                li.nav-item
-                    a(href='/login').nav-link Create Listing
+        header.navbar.navbar-expand-lg
+            h1.navbar-brand Mehdi Art House
+            button.navbar-toggler(type="button", data-bs-toggle="collapse",data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                span.bi.bi-list
+            .collapse.navbar-collapse#navbarNav
+                ul.navbar-nav.ms-auto
+                    li.nav-item
+                        a(href="/").nav-link Our work
+                    li.nav-item
+                        a(href="/gallery").nav-link Gallery
+                    li.nav-item
+                        a(href="/login").nav-link Create Listing
         main
             block main-content
-        footer#footer
+        footer
             p &copy; Copyright Mehdi Art House by ManaliPatel, 2023.
-        script(src='about.js')
+        script(src="about.js")
+        //- script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous")
+        //- script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous")
+    
