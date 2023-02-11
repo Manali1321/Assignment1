@@ -23,18 +23,32 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // page routes
-app.get('/', async (request, response) => {
-    // response.status(200).send('test page');
+app.get("/", async (request, response) => {
     const datas = await getData();
-    console.log(datas);
     response.render('index', { content: datas });
 });
 app.get("/login", async (request, response) => {
-    response.render("login");
+    const datas = await getData();
+    response.render("login", { content: datas });
 });
 app.get("/pricing", async (request, response) => {
     response.render("pricing");
 });
+// Form processing path
+app.post("/login/submit", async (request, response) => {
+    console.log(request.body)
+    let newdata = {
+        name: request.body.name,
+        description: request.body.description,
+        price: request.body.price,
+        offer: request.body.offer,
+        mywork: request.body.youwork,
+        location: request.body.location
+    };
+    await addData(newdata);
+    response.redirect('/login');
+});
+
 // set up server listening
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
@@ -55,5 +69,10 @@ async function getData() {
     var results = await collection.find({}).toArray();
     // var result = await results.toArray(); //convert to an array
     return results;
-
+}
+async function addData(newdata) {
+    var db = await connection();
+    // var collection = ;
+    await db.collection("seller_data").insertOne(newdata);
+    console.log('link added');
 }

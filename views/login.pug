@@ -1,26 +1,34 @@
 extends layout 
 
 
-block main-content 
-    p Do you want convert you hobby into business?
-    p To add you post fill this form!!!
-    form(action="/post")
-        label(for='fname') Full Name:
-        input(type='text' name='fname' placeholder='John Doe')
-        label(for='desc') Description:
-        textarea(name="message" rows="10" cols="30") Hey!!!I am specialist in arabic mehdi
-        <p>Are you eligible to work in canada?</p>
-        input(type="radio" id="workAssurance" name="workAssurance")
-        label(for="workAssurance") Yes
-        input(type="radio" id="workAssurance" name="workAssurance")
-        label(for="workAssurance") No
-        label(for='price') Price:
-        input(type='text' name='price' placeholder='10$ for one hand')
-        label(for='offer') Offer:
-        input(type='text' name='offer' placeholder='If you want to add any offer')
-        label(for='youwork') Image path:
-        input(type='text' name='youwork' placeholder="img src='/round.jpeg' and add image into public folder")
-        label(for='location') Where you want to work:
-        input(type='text' name='location' placeholder="Etobicoke (around 15km i can travel)")
-        
-        input(type='submit' value='Submit')
+block main-content
+    .container
+        h2 Do you want convert you hobby into business?
+        p Add You Post By Filling This Form!!!
+        form(method="post", action="/login/submit")
+            .form-group
+                label(for='name') Full Name:
+                input(type='text' name='name' placeholder='John Doe')
+            .form-group
+                label(for='description') Description:
+                textarea(name="description" rows="10" cols="50") Hey!!!I am specialist in arabic mehdi
+            .form-group
+                p Are you eligible to work in canada? 
+                .form-check
+                    input.form-check-input(type="radio" id="workAssurance" name="workAssurance")
+                    label.form-check-label(for="workAssurance") Yes
+                    input.form-check-input(type="radio" id="workAssurance" name="workAssurance")
+                    label.form-check-label(for="workAssurance") No
+            .form-group
+                label(for='price') Price:
+                input(type='text' name='price' placeholder='10$ for one hand')
+            .form-group
+                label(for='offer') Offer:
+                input(type='text' name='offer' placeholder='If you want to add any offer')
+            .form-group
+                label(for='mywork') Image path:
+                input(type='text' name='mywork' placeholder="img src='/round.jpeg' and add image into public folder")
+            .form-group
+                label(for='location') Where you want to work:
+                input(type='text' name='location' placeholder="Etobicoke (around 15km i can travel)")
+            button.btn.btn-primary(type='submit') submit
